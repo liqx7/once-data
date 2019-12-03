@@ -97,12 +97,12 @@ export default {
               path: '/',
               redirect: '/welcome',
             },
-            {
-              path: '/welcome',
-              name: 'welcome',
-              icon: 'smile',
-              component: './Welcome',
-            },
+            // {
+            //   path: '/welcome',
+            //   name: 'welcome',
+            //   icon: 'smile',
+            //   component: './Welcome',
+            // },
             {
               path: '/admin',
               name: 'admin',
@@ -110,6 +110,81 @@ export default {
               component: './Admin',
               authority: ['admin'],
             },
+            {
+              path: '/maintain',
+              name: '数据运维',
+              icon: 'smile',
+              component: './Maintain',
+            },
+            {
+              path: '/calc',
+              name: '数据计算',
+              icon: 'smile',
+              component: './Calc',
+            },
+            {
+              path: '/store',
+              name: '数据存储',
+              icon: 'smile',
+              // component: './Store',
+              routes: [
+                {
+                  path: '/store/hdfs',
+                  name: 'HDFS',
+                  component: './Store/HDFS',
+                },
+                {
+                  path: '/store/hive',
+                  name: 'Hive',
+                  component: './Store/Hive',
+                },
+                {
+                  path: '/store/hbase',
+                  name: 'HBase',
+                  component: './Store/HBase',
+                },
+              ],
+            },
+            {
+              path: '/trans',
+              name: '数据传输',
+              icon: 'smile',
+              component: './Trans',
+            },
+            {
+              path: '/proj',
+              name: '项目管理',
+              icon: 'smile',
+              // component: './Proj',
+              routes: [
+                {
+                  path: '/proj/user',
+                  name: '用户中心',
+                  component: './Proj/UserCenter',
+                },
+                {
+                  path: '/proj/member',
+                  name: '成员管理',
+                  component: './Proj/Member',
+                },
+                {
+                  path: '/proj/role',
+                  name: '角色管理',
+                  component: './Proj/Role',
+                },
+                {
+                  path: '/proj/resource',
+                  name: '资源管理',
+                  component: './Proj/Resource',
+                },
+              ],
+            },
+            // {
+            //   path: '/center',
+            //   name: '用户中心',
+            //   icon: 'smile',
+            //   component: './Center',
+            // },
             {
               component: './404',
             },
