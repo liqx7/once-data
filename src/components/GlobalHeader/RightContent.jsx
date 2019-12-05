@@ -5,6 +5,7 @@ import { formatMessage } from 'umi-plugin-react/locale';
 import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
 // import SelectLang from '../SelectLang';
+import SelectProj from '../SelectProj';
 import styles from './index.less';
 
 const GlobalHeaderRight = props => {
@@ -17,6 +18,7 @@ const GlobalHeaderRight = props => {
 
   return (
     <div className={className}>
+      <SelectProj />
       <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder={formatMessage({

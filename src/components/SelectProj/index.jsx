@@ -1,4 +1,4 @@
-import { Icon, Menu } from 'antd';
+import { Menu } from 'antd';
 import React from 'react';
 import classNames from 'classnames';
 import { connect } from 'dva';
@@ -37,11 +37,12 @@ class SelectProj extends React.Component {
         ))}
       </Menu>
     );
+
     return (
       <HeaderDropdown overlay={projMenu} placement="bottomRight">
         <span className={classNames(styles.dropDown, className)}>
-          <Icon type="global" />
-          当前项目：
+          {/* <Icon type="global" /> */}
+          当前项目：{(projs.find(v => String(v.id) === currentProj) || projs[0]).name}
         </span>
       </HeaderDropdown>
     );
