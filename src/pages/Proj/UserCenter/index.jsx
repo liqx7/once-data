@@ -1,11 +1,12 @@
 import React from 'react';
-import DisplayRow from '@/components/DisplayRow';
+import { Descriptions } from 'antd';
+// import DisplayRow from '@/components/DisplayRow';
 // import { PageHeaderWrapper } from '@ant-design/pro-layout';
 // import { FormattedMessage } from 'umi-plugin-react/locale';
 // import { Card, Typography, Alert } from 'antd';
 // import styles from './Welcome.less';
 
-class Calc extends React.Component {
+class UserCenter extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -24,10 +25,17 @@ class Calc extends React.Component {
 
     return (
       <div>
-        <DisplayRow data={data} />
+        {/* <DisplayRow data={data} /> */}
+        <Descriptions title="个人中心">
+          {data.map(v => (
+            <Descriptions.Item key={v.title} label={v.title}>
+              {v.content}
+            </Descriptions.Item>
+          ))}
+        </Descriptions>
       </div>
     );
   }
 }
 
-export default Calc;
+export default UserCenter;
