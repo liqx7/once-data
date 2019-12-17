@@ -158,24 +158,34 @@ export default {
               // component: './Proj',
               routes: [
                 {
+                  path: '/proj/apply',
+                  name: '申请管理',
+                  component: './Proj/Apply',
+                  authority: ['admin'],
+                },
+                {
                   path: '/proj/user',
                   name: '用户中心',
                   component: './Proj/UserCenter',
+                  authority: ['user'],
                 },
                 {
                   path: '/proj/member',
                   name: '成员管理',
                   component: './Proj/Member',
+                  authority: ['user'],
                 },
                 {
                   path: '/proj/role',
                   name: '角色管理',
                   component: './Proj/Role',
+                  authority: ['user'],
                 },
                 {
                   path: '/proj/resource',
                   name: '资源管理',
                   component: './Proj/Resource',
+                  authority: ['user'],
                 },
               ],
             },

@@ -14,8 +14,8 @@ import {
   // Facet,
   // Util,
 } from 'bizcharts';
+import { Button, List } from 'antd';
 import DataSet from '@antv/data-set';
-import { Button } from 'antd';
 
 // import { PageHeaderWrapper } from '@ant-design/pro-layout';
 // import { FormattedMessage } from 'umi-plugin-react/locale';
@@ -53,6 +53,13 @@ class Resource extends React.Component {
       },
     };
 
+    const listdata = [
+      'Racing car sprays burning fuel into crowd.',
+      'Japanese princess to wed commoner.',
+      'Australian walks 100km after outback crash.',
+      'Man charged over missing wedding girl.',
+      'Los Angeles battles huge wildfires.',
+    ];
     return (
       <div>
         <section>
@@ -105,6 +112,14 @@ class Resource extends React.Component {
         <section>
           <h1>yarn队列</h1>
           <Button>申请</Button>
+          <List
+            size="small"
+            header={<div>Header</div>}
+            footer={<div>Footer</div>}
+            bordered
+            dataSource={listdata}
+            renderItem={item => <List.Item>{item}</List.Item>}
+          />
         </section>
       </div>
     );
